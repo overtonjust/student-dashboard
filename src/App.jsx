@@ -8,7 +8,6 @@ import data from './data/data.json';
 import './App.scss'
 
 function App() {
-  console.log(data[0])
 
   return (
     <>

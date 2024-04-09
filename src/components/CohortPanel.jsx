@@ -30,11 +30,13 @@ function CohortPanel() {
                 <p className='panel-box__head'>Choose a Cohort by Start Date</p>
                 <p className='panel-box__selection'>All Students</p>
                 {cohortList.map(cohort => {     
+                   
                     return (
                         <>
                             <p className='panel-box__selection'>{cohort}</p>
                         </>
                     )
+                    
                 })}
             </div>
         </>
