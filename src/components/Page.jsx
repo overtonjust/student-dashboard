@@ -1,7 +1,9 @@
 import './styles/Page.scss';
-import data from '../data/data.json';
 
-function Page() {
+
+function Page(props) {
+    const {data} = props;
+
     return( 
         <>
             <div className="page">
@@ -11,8 +13,7 @@ function Page() {
                 </header>
                 {data.map(student => {
                     return (
-                        <>
-                            <article className='page__student'>
+                            <article key={student.id} className='page__student'>
                                 <img className='page__img' src={student.profilePhoto} alt={formatName(student)} />
                                 <div className="page__info">
                                     <p className='page__name'>{formatName(student)}</p>
@@ -21,7 +22,6 @@ function Page() {
                                 </div>
                                     <button className='page__more'>Show More...</button>
                             </article>
-                        </>
                     )
                 })}
             </div>
