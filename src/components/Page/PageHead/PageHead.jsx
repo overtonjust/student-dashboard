@@ -1,0 +1,15 @@
+import './PageHead.scss'
+
+
+function PageHead(props) {
+    const {total} = props
+
+    return (
+        <header className='page__head page-header'>
+            <p className='page-header__title'>All Students</p>
+            <p className='page-header__count'>Total Students: <span className='page-header__highlight'>{total}</span></p>
+        </header>
+    )
+}
+
+export default PageHead;

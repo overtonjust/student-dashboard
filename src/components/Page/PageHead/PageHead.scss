@@ -1,0 +1,17 @@
+$sky-blue: rgb(58, 183, 228);
+
+.page-header {
+
+    &__title {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    &__count {
+        font-size: .9rem;
+    }
+
+    &__highlight {
+        color: $sky-blue;
+    }
+}

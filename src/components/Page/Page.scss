@@ -1,0 +1,28 @@
+$sky-blue: rgb(58, 183, 228);
+$pumpkin: #ff6700ff;
+$white: #ebebebff;
+$silver: #c0c0c0ff;
+$bice-blue: #3a6ea5ff;
+$polynesian-blue: #004e98ff;
+
+
+.page {
+    grid-area: page;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% auto;
+    padding: 4%;
+    row-gap: 2%;
+    overflow-y: scroll;
+
+    &__head{
+        grid-row: 1;
+    }
+
+    &__student {
+
+
+    }
+
+}

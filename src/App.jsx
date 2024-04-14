@@ -1,14 +1,13 @@
 import { useState } from 'react'
-
-import Header from './components/Header';
-import CohortPanel from './components/CohortPanel';
-import Page from './components/Page';
+import Header from './components/Header/Header';
+import CohortPanel from './components/CohortPanel/CohortPanel';
+import Page from './components/Page/Page';
 
 import data from './data/data.json';
 import './App.scss'
 
 function App() {
-  const uniqueCohorts = [...new Set(data.map(student => student.cohort.cohortCode))] // remove duplicate seasons
+  const uniqueCohorts = [...new Set(data.map(student => student.cohort.cohortCode))] // remove duplicate seasons and place into an array
   const cohortList = uniqueCohorts.map(cohort => { // create an arr of objs for each season and year
      const cohortArr = cohort.split(/(\d+)/);
      const season = cohortArr[0];
@@ -30,7 +29,7 @@ function App() {
   })
   .map(obj => `${obj.season} ${obj.year}`) // convert the sorted arr of objs back into a formatted array of strings
 
-  const [currCohort, setCurrCohort] = useState(null);
+  const [currCohort, setCurrCohort] = useState(false);
 
   const changeCohort = (clickedCohort) => {
     setCurrCohort(clickedCohort)
@@ -43,7 +42,7 @@ function App() {
         <Header/>
         <div className="container__body">
           <CohortPanel cohorts={cohortList} clickAction={changeCohort} />
-          <Page data={filteredList} />
+          <Page data={filteredList}  />
         </div>
       </div>
       

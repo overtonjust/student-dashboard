@@ -1,4 +1,4 @@
-import './styles/CohortPanel.scss';
+import './CohortPanel.scss';
 
 
 function CohortPanel(props) {
@@ -9,7 +9,7 @@ function CohortPanel(props) {
         <>
             <div className="panel-box">             
                 <ul className='panel-box__head'>Choose a Cohort by Start Date</ul>
-                    <li onClick={() => clickAction(null)} className='panel-box__selection'>All Students</li>
+                    <li onClick={() => clickAction(false)} className='panel-box__selection'>All Students</li>
                     {cohorts.map((cohort,index) => {     
                     
                         return (                       
