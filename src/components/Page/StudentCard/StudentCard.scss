@@ -34,12 +34,24 @@ $polynesian-blue: #004e98ff;
         grid-row: 1;
     }
     
+    &__head {
+        display: flex;
+        align-items: center;
+       
+    }
+
     &__name {
         font-size: 1rem;
         font-weight: 600;
         line-height: 130%;
     }
     
+    &__verified {
+        color: $pumpkin;
+        font-size: .9rem;
+        margin-left: 40%;
+    }
+
     &__email {
         font-size: .9rem;
         line-height: 130%;
@@ -82,10 +94,11 @@ $polynesian-blue: #004e98ff;
     &__check {
         color: $sky-blue;
     }
-
+    
     &__x{
         color: $pumpkin;
     }
+    
 }
 
 .stats {

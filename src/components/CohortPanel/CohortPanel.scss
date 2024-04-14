@@ -30,4 +30,8 @@ $polynesian-blue: #004e98ff;
         list-style-type: none;
         cursor: pointer;
     }
+
+    &__active {
+        color: $pumpkin;
+    }
 }

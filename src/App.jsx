@@ -41,8 +41,8 @@ function App() {
       <div className="container">
         <Header/>
         <div className="container__body">
-          <CohortPanel cohorts={cohortList} clickAction={changeCohort} />
-          <Page data={filteredList}  />
+          <CohortPanel cohorts={cohortList} clickAction={changeCohort} activeState={currCohort} />
+          <Page data={filteredList} selectedCohort={currCohort} />
         </div>
       </div>
       

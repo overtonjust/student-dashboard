@@ -44,12 +44,16 @@ function StudentCard(props) {
                 const codewarsGoal = student.codewars.goal;
                 const certs = student.certifications;
                 const scores = student.cohort.scores;
+                const verified = certs.resume && certs.linkedin && certs.mockInterview && certs.github;
 
                 return (
                         <article key={student.id} className='page__student student'>
                             <img className='student__img' src={student.profilePhoto} alt={formatName(student)} />
                             <div className="student__info">
-                                <p className='student__name'>{formatName(student)}</p>
+                                <div className="student__head">
+                                    <p className='student__name'>{formatName(student)}</p>
+                                    <p className='student__verified'>{verified ? 'On track to graduate' : ''}</p>
+                                </div>
                                 <p className='student__email'>{student.username}</p>
                                 <p className='student__birthday'><span className='student__highlight'>Birthday: </span>{formateDate(student.dob)}</p>
                                 <button onClick={() => setShowStatus(!showStatus)} className='student__more'>{showStatus ? 'Show Less... ' : 'Show More...'}</button>
