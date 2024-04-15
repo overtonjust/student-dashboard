@@ -8,126 +8,32 @@ $polynesian-blue: #004e98ff;
 .student {
 
         height: fit-content;
-        max-height: 400px;
         width: 100%;
         display: grid;
         grid-template-columns: 15% 85%;
-        grid-template-rows: 40% auto;
+        grid-template-rows: auto;
         border: 2px solid $sky-blue;
         border-radius: 2px;
         padding: 3%;
         column-gap: 4%;
         row-gap: 2rem;
 
-    &__img {
-        grid-column: 1;
+
+    &__header {
         grid-row: 1;
-        height: 110px;
-        width: 100px;
-        border-radius: 5px;
-        object-fit: cover;
-        
+        grid-column: span 2;
     }
-    
-    &__info {
-        grid-column: 2;
-        grid-row: 1;
-    }
-    
-    &__head {
-        display: flex;
-        align-items: center;
-       
+   
+    &__stats{
+        grid-column: span 2;
+        grid-row: 2;
     }
 
-    &__name {
-        font-size: 1rem;
-        font-weight: 600;
-        line-height: 130%;
-    }
-    
-    &__verified {
-        color: $pumpkin;
-        font-size: .9rem;
-        margin-left: 40%;
-    }
-
-    &__email {
-        font-size: .9rem;
-        line-height: 130%;
-    }
-    
-    &__birthday{
-        font-size: .9rem;
-        line-height: 130%;
-    }
-    
-    &__highlight {
-        color: $sky-blue;
-    }   
-
-    
-    &__more {
-        grid-row: 1;
-        margin-top: 4%;
-        text-align: left;
-        background: none;
-        border: none;
-        text-decoration: underline;
-        color: $sky-blue;
-        font-size: .9rem;
-        cursor: pointer;
-    }
-
-    &__value {
-        font-weight: 600;
-    }
-
-    &__label {
-        color: $sky-blue;
-    }
-
-    &__icon {
-        font-size: 1.5rem;
-    }
-
-    &__check {
-        color: $sky-blue;
-    }
-    
-    &__x{
-        color: $pumpkin;
+    &__form {
+        grid-row: 3;
+        grid-column: span 2;
     }
     
 }
 
-.stats {
-    grid-column: span 2;
-    grid-row: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 4%; 
 
-    &__codewars {
-        grid-column: 1;
-    }
-
-    &__scores {
-        grid-column: 2;
-    }
-
-    &__certifications {
-        grid-column: 3;
-    }
-
-    &__head {
-        margin-bottom: 8%;
-        text-decoration: underline;
-        font-size: 1.2rem;
-    }
-
-    &__content {
-        font-size: .9rem;
-        margin: 4% 0;
-    }
-}

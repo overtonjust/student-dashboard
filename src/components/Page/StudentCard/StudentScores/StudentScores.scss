@@ -1,0 +1,59 @@
+$sky-blue: rgb(58, 183, 228);
+$pumpkin: #ff6700ff;
+$white: #ebebebff;
+$silver: #c0c0c0ff;
+$bice-blue: #3a6ea5ff;
+$polynesian-blue: #004e98ff;
+
+
+
+
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 4%; 
+
+    &__codewars {
+        grid-column: 1;
+    }
+
+    &__scores {
+        grid-column: 2;
+    }
+
+    &__certifications {
+        grid-column: 3;
+    }
+
+    &__head {
+        margin-bottom: 8%;
+        text-decoration: underline;
+        font-size: 1.2rem;
+    }
+
+    &__content {
+        font-size: .9rem;
+        margin: 4% 0;
+    }
+    
+    &__value {
+        font-weight: 600;
+    }
+
+    &__label {
+        color: $sky-blue;
+    }
+
+    &__icon {
+        font-size: 1.5rem;
+    }
+
+    &__check {
+        color: $sky-blue;
+    }
+    
+    &__x{
+        color: $pumpkin;
+    }
+}
