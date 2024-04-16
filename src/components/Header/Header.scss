@@ -1,10 +1,10 @@
-$pumpkin: #ff6700ff;
-$white: #ebebebff;
-$silver: #c0c0c0ff;
-$bice-blue: #3a6ea5ff;
-$polynesian-blue: #004e98ff;
-$sky-blue: rgba(66, 202, 253, 1);
 
+$pumpkin: #ff6700;
+$dark-blue: #274c77;
+$gray: #8b8c89;
+$white: #e7ecef;
+$soft-blue: #349ce1;
+$light-blue: #6096ba;
 
 .header {
     position: fixed;
@@ -15,12 +15,17 @@ $sky-blue: rgba(66, 202, 253, 1);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $silver;
-    border-bottom: 2px solid $sky-blue;
+    background-color: $dark-blue;
+    // border-bottom: 7px solid $light-blue;
+    box-shadow: 0 .5em 1em $light-blue;
+
     
     &__text { 
-        color: $bice-blue;
+        color: $white;
         font-size: 2rem;
         font-weight: 600;
+        text-shadow: 2px 2px 4px  $gray;
     }
+    
+  
 }

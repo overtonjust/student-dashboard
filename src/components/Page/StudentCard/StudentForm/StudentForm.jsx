@@ -36,15 +36,20 @@ function StudentForm(props) {
 
     function formatNotes(noteObj) {
         const commenter = noteObj.commenter
-        const comment = noteObj.comment
+        const comment = noteObj.comment    
 
-        return `${commenter} says, "${comment}"`
+        return  (
+            <>
+                <span className="oneOnOne__author">{commenter} : </span><span className="oneOnOne__quote">{comment}</span>
+            </>
+        )
     }
 
 
     return(
         <form onSubmit={handleSubmit} className='student__form oneOnOne'>
-        <p className='oneOnOne__title'>1-on-1 Notes</p>
+        <p className='oneOnOne__title'>1-on-1 Notes </p>
+        <p className="oneOnOne__total">Total notes: <span className="oneOnOne__total-num">{notesList.length}</span></p>
         <div className="oneOnOne__box">
             <div className="oneOnOne__name">
                 <label htmlFor="name" className='oneOnOne__label' >Commenter Name: </label>

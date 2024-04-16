@@ -15,7 +15,7 @@ function StudentCard(props) {
                 const codewarsGoal = student.codewars.goal;
                 const certs = student.certifications;
                 const scores = student.cohort.scores;
-                const verified = certs.resume && certs.linkedin && certs.mockInterview && certs.github;
+                const verified = certs.resume && certs.linkedin && certs.mockInterview && certs.github && codewarsCurrent.total > 600;
 
                 return (
                         <article key={student.id} className='page__student student'>

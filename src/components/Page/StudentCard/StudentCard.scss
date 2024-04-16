@@ -1,9 +1,9 @@
-$sky-blue: rgb(58, 183, 228);
-$pumpkin: #ff6700ff;
-$white: #ebebebff;
-$silver: #c0c0c0ff;
-$bice-blue: #3a6ea5ff;
-$polynesian-blue: #004e98ff;
+$pumpkin: #ff6700;
+$dark-blue: #274c77;
+$gray: #8b8c89;
+$white: #e7ecef;
+$soft-blue: #349ce1;
+$gray-blue: #6096ba;
 
 .student {
 
@@ -12,8 +12,8 @@ $polynesian-blue: #004e98ff;
         display: grid;
         grid-template-columns: 15% 85%;
         grid-template-rows: auto;
-        border: 2px solid $sky-blue;
-        border-radius: 2px;
+        border: 2px solid $gray-blue;
+        border-radius: 4px;
         padding: 3%;
         column-gap: 4%;
         row-gap: 2rem;

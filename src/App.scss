@@ -1,15 +1,22 @@
+
+// $sky-blue: rgba(66, 202, 253, 1);
+// $pumpkin: #ff6700ff;
+// $white: #ebebebff;
+// $silver: #c0c0c0ff;
+// $bice-blue: #3a6ea5ff;
+// $polynesian-blue: #004e98ff;
+
+$dark-blue: #274c77ff;
+$soft-blue: #6096baff;
+$gray: #8b8c89ff;
+$white: #e7ecefff;
+$light-blue: #a3cef1ff;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-$sky-blue: rgba(66, 202, 253, 1);
-$pumpkin: #ff6700ff;
-$white: #ebebebff;
-$silver: #c0c0c0ff;
-$bice-blue: #3a6ea5ff;
-$polynesian-blue: #004e98ff;
 
 :root {
     font-size: 16px;

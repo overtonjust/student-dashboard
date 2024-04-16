@@ -1,9 +1,11 @@
-$sky-blue: rgb(58, 183, 228);
-$pumpkin: #ff6700ff;
-$white: #ebebebff;
-$silver: #c0c0c0ff;
-$bice-blue: #3a6ea5ff;
-$polynesian-blue: #004e98ff;
+$pumpkin: #ff6700;
+$dark-blue: #274c77;
+$gray: #8b8c89;
+$grayScroll: rgba(139, 140, 137,.2);
+$white: #e7ecef;
+$soft-blue: #349ce1;
+$gray-blue: #6096ba;
+
 
 
 .page {
@@ -15,6 +17,9 @@ $polynesian-blue: #004e98ff;
     padding: 4%;
     row-gap: 2%;
     overflow-y: scroll;
+    scrollbar-color: $gray-blue $grayScroll;
+    scrollbar-width: thin;
+    
 
     &__head{
         grid-row: 1;

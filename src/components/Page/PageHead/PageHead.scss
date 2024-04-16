@@ -1,17 +1,25 @@
-$sky-blue: rgb(58, 183, 228);
+$pumpkin: #ff6700;
+$dark-blue: #274c77;
+$gray: #8b8c89;
+$white: #e7ecef;
+$soft-blue: #349ce1;
+$gray-blue: #6096ba;
 
 .page-header {
 
     &__title {
         font-size: 1.3rem;
         font-weight: 600;
+        color: $pumpkin;
     }
 
     &__count {
-        font-size: .9rem;
+        font-size: 1rem;
+        color: $gray;
     }
 
     &__highlight {
-        color: $sky-blue;
+        font-weight: 600;
+        color: $soft-blue;
     }
 }

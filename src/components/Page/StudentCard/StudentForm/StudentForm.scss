@@ -1,9 +1,9 @@
-$sky-blue: rgb(58, 183, 228);
-$pumpkin: #ff6700ff;
-$white: #ebebebff;
-$silver: #c0c0c0ff;
-$bice-blue: #3a6ea5ff;
-$polynesian-blue: #004e98ff;
+$pumpkin: #ff6700;
+$dark-blue: #274c77;
+$gray: #8b8c89;
+$white: #e7ecef;
+$soft-blue: #349ce1;
+$gray-blue: #6096ba;
 
 
 
@@ -13,20 +13,33 @@ $polynesian-blue: #004e98ff;
     height: fit-content;
     width: 95%;
     grid-template-columns: 1fr;
-    grid-template-rows: 10% auto auto;
-    border-top: 2px solid $sky-blue;
-    row-gap: 4%;
+    grid-template-rows: 10% 10% auto auto;
+    border-top: 2px solid $gray-blue;
+    row-gap: 2%;
 
     &__title {
         grid-row: 1;
         font-weight: 600;
+        color: $dark-blue;
+        margin-top: 1%;
+    }
+
+    &__total{
+        grid-row: 2;
         margin-bottom: 8%;
+        color: $gray;
+    }
+
+    &__total-num{
+        color: $soft-blue;
+        font-weight: 600;
     }
 
     &__box {
-        grid-row: 2;
+        grid-row: 3;
         height: 125px;
-        border: 2px solid black;
+        border: 2px solid $gray-blue;
+        border-radius: 4px;
         padding: 2%;       
         display: flex;
         flex-direction: column;
@@ -35,11 +48,15 @@ $polynesian-blue: #004e98ff;
     }
 
     &__label {
-
+        color: $gray;
+        font-size: 1.1rem;
     }
 
     &__input {
-      
+        background-color: $white;
+        border: 2px solid $gray-blue;
+        color: $soft-blue;
+        outline: none;
     }
 
     &__button {
@@ -47,27 +64,40 @@ $polynesian-blue: #004e98ff;
         border-radius: 40px;
         font-weight: 600;
         color: #fff;
-        background-color: $sky-blue;
+        background-color: $gray-blue;
         outline: none;
+        border: 2px solid $gray;
         cursor: pointer;
     }
 
+    &__author {
+        font-size: 1.1rem;
+        color: $pumpkin;
+    }
+
+    &__quote {
+        font-size: .9rem;
+        color: $soft-blue;
+    }
+
     &__list{
-        grid-row: 3;
+        grid-row: 4;
         padding: 2%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         overflow-y: auto;
-    
-    }
-    &__list::-webkit-scrollbar {
-       background: $white;
-    }
-
-   
+        list-style-type: none;
+        scrollbar-color: $gray-blue $white;
+    }   
 
     &__list-item{
-         margin: .5% 0;
+         margin: .5% 0 .5% -2%;
+    }
+
+    &__list-item::before {
+        content: ' \25B6';
+        color: $gray-blue;
+        margin-right: 2%;
     }
 }

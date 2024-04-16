@@ -1,10 +1,9 @@
-$sky-blue: rgb(58, 183, 228);
-$pumpkin: #ff6700ff;
-$white: #ebebebff;
-$silver: #c0c0c0ff;
-$bice-blue: #3a6ea5ff;
-$polynesian-blue: #004e98ff;
-
+$pumpkin: #ff6700;
+$dark-blue: #274c77;
+$gray: #8b8c89;
+$white: #e7ecef;
+$soft-blue: #349ce1;
+$gray-blue: #6096ba;
 
 .card-head {
     display: grid;
@@ -23,39 +22,42 @@ $polynesian-blue: #004e98ff;
     
     &__info {
         grid-column: 2;
-        
+        width: 85%;
     }
     
     &__head {
         display: flex;
         align-items: center;
-       
+        justify-content: space-between;
     }
 
     &__name {
         font-size: 1rem;
         font-weight: 600;
         line-height: 130%;
+        color: $dark-blue;
     }
     
     &__verified {
         color: $pumpkin;
         font-size: .9rem;
-        margin-left: 40%;
+        
     }
 
     &__email {
         font-size: .9rem;
         line-height: 130%;
+        color: $gray;
     }
     
     &__birthday{
         font-size: .9rem;
         line-height: 130%;
+        color: $gray;
     }
     
     &__highlight {
-        color: $sky-blue;
+        color: $soft-blue;
     }   
 
     
@@ -66,7 +68,7 @@ $polynesian-blue: #004e98ff;
         background: none;
         border: none;
         text-decoration: underline;
-        color: $sky-blue;
+        color: $soft-blue;
         font-size: .9rem;
         cursor: pointer;
     }

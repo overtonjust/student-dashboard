@@ -4,7 +4,7 @@ function Header () {
     return (
         <>
             <div className="header">
-                <p className="header__text">Student Dashboard</p>
+                <p className="header__text"><span className='header__shadow'>S</span>tudent Dashboard</p>
             </div>
         </>
     ) 
