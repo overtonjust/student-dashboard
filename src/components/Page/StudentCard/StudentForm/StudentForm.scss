@@ -37,7 +37,8 @@ $gray-blue: #6096ba;
 
     &__box {
         grid-row: 3;
-        height: 125px;
+        min-height: 125px;
+        max-height: fit-content;
         border: 2px solid $gray-blue;
         border-radius: 4px;
         padding: 2%;       
