@@ -4,7 +4,7 @@ import './StudentHeader.scss'
 
 function StudentHeader(props) {
     const {src , name, verified, username, dob, index, state, setState} = props;
-
+    
 
     function formatName(obj) {
         const firstName = obj.names.preferredName;
@@ -22,6 +22,7 @@ function StudentHeader(props) {
     }
 
 
+   
     return (
         <>
             <div className="student__header card-head">

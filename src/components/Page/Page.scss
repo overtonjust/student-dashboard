@@ -25,9 +25,17 @@ $gray-blue: #6096ba;
         grid-row: 1;
     }
 
-    &__student {
+    
+
+}
 
 
+@media (max-width: 1224px) {
+    .page {
+        row-gap: 2rem;
+
+        &__head{
+            margin-top: 2rem;
+        }
     }
-
 }

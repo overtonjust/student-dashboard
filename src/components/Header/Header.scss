@@ -2,6 +2,7 @@
 $pumpkin: #ff6700;
 $dark-blue: #274c77;
 $gray: #8b8c89;
+$dropdown-gray: #696969;
 $white: #e7ecef;
 $soft-blue: #349ce1;
 $light-blue: #6096ba;
@@ -24,8 +25,41 @@ $light-blue: #6096ba;
         color: $white;
         font-size: 2rem;
         font-weight: 600;
-        text-shadow: 2px 2px 4px  $gray;
+        text-shadow: .1em .1em .2em  $gray;
+        margin: auto;
     }
     
+
+    &__dropdown-box {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+        place-items: center;
+        position: relative;
+    }
+
+    &__mobile {
+        grid-column: 1;
+        grid-row: 1;
+        font-size: 2rem;
+        color: $gray;
+        cursor: pointer;
+    }
+
+    &__dropdown-menu {
+        position: absolute;
+        right: 0%;
+        width: 10rem;
+        top: calc(100% + 1rem);
+        border-radius: .2rem;
+        background-color: $white;
+        box-shadow: .2em .2em .4em $gray;
+    }
+
+  
+    &__option {
+        color: $pumpkin;
+    }
   
 }

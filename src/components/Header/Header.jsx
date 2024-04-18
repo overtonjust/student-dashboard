@@ -1,10 +1,30 @@
+import React from 'react';
+import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import './Header.scss'
 
-function Header () {
+
+function Header (props) {
+    const {children} = props;
+    const [toggleButton,setToggleButton ] = useState(false);
+    
+
+
     return (
         <>
             <div className="header">
-                <p className="header__text"><span className='header__shadow'>S</span>tudent Dashboard</p>
+                <p className="header__text">Student Dashboard</p>
+                {children ?
+                    <div className="header__dropdown-box">
+                        <FontAwesomeIcon className='header__mobile' icon={faBars} onClick={() => setToggleButton(!toggleButton)}/>
+                        {toggleButton &&
+                            <div className="header__dropdown-menu">
+                                {children}
+                            </div>
+                        }
+                    </div>
+                : ''}
             </div>
         </>
     ) 

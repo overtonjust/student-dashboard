@@ -15,7 +15,7 @@ function StudentScores(props) {
             verifiedNum2 = Number(num2);
         }
         
-        const percentage = verifiedNum2 ?  ((verifiedNum1 / verifiedNum2) * 100).toFixed(1) : (verifiedNum1 * 100).toFixed(1); 
+        const percentage = verifiedNum2 ?  ((verifiedNum1 / verifiedNum2) * 100).toFixed(0) : (verifiedNum1 * 100).toFixed(0); 
 
         return `${percentage}%`;
     }

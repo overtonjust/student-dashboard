@@ -60,3 +60,9 @@ $gray-blue: #6096ba;
         color: $pumpkin;
     }
 }
+
+@media (max-width: 1224px) {
+    .stats {
+        grid-template-columns: auto;
+    }
+}

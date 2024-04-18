@@ -37,11 +37,10 @@ $gray-blue: #6096ba;
 
     &__box {
         grid-row: 3;
-        min-height: 125px;
-        max-height: fit-content;
+        min-height: fit-content;
         border: 2px solid $gray-blue;
         border-radius: 4px;
-        padding: 2%;       
+        padding: 4%;       
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -55,7 +54,7 @@ $gray-blue: #6096ba;
 
     &__input {
         background-color: $white;
-        border: 2px solid $gray-blue;
+        border: .2em solid $gray-blue;
         color: $soft-blue;
         outline: none;
     }
@@ -67,8 +66,15 @@ $gray-blue: #6096ba;
         color: #fff;
         background-color: $gray-blue;
         outline: none;
-        border: 2px solid $gray;
+        border: .2em solid $gray;
         cursor: pointer;
+        transition: .02s ease-in;
+        box-shadow: .2em .5em .3em $dark-blue;
+    }
+
+    &__button:active {
+        transform: translateY(.2em);
+        box-shadow: 0em .2em .3em $dark-blue;
     }
 
     &__author {
@@ -100,5 +106,14 @@ $gray-blue: #6096ba;
         content: ' \25B6';
         color: $gray-blue;
         margin-right: 2%;
+    }
+}
+
+@media (max-width: 1224px) {
+    .oneOnOne {
+
+        &__input {
+            width: 5rem;
+        }
     }
 }

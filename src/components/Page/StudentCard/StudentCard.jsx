@@ -5,6 +5,7 @@ import StudentForm from './StudentForm/StudentForm';
 import './StudentCard.scss'
 
 function StudentCard(props) {
+    
     const {studentInfo } = props;
     const [showStatus, setShowStatus] = useState(-1);
 

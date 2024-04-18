@@ -13,8 +13,8 @@ $gray-blue: #6096ba;
     
     &__img {
         grid-column: 1;
-        height: 110px;
-        width: 100px;
+        max-height: 110px;
+        max-width: 100px;
         border-radius: 5px;
         object-fit: cover;
         
@@ -71,5 +71,21 @@ $gray-blue: #6096ba;
         color: $soft-blue;
         font-size: .9rem;
         cursor: pointer;
+    }
+}
+
+@media (max-width: 1224px) {
+    .card-head{
+       
+
+        &__img{
+            width: 3.5rem;
+            height: 3.5rem;
+            object-fit: cover;
+        }
+
+        &__info{
+            
+        }
     }
 }

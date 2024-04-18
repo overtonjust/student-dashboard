@@ -53,5 +53,17 @@ html, body {
         padding: 4%;
         column-gap: 4%;
     }
+
+    &__body-mobile {
+        grid-area: body;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'page page';
+        background-color: $white;
+        padding: 4%;
+        column-gap: 4%;
+    }
 }
 
