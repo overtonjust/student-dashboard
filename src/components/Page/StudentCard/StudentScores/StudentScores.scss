@@ -64,5 +64,6 @@ $gray-blue: #6096ba;
 @media (max-width: 1224px) {
     .stats {
         grid-template-columns: auto;
+        padding-right: .6rem;
     }
 }
