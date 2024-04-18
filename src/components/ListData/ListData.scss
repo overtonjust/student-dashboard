@@ -23,11 +23,6 @@ $light-blue: #6096ba;
         cursor: pointer;
     }
 
-    &__selection:hover {
-        box-shadow: .2em .2em .4em $gray;
-        border-radius: 2em;
-        color: $dark-blue;
-    }
     
     &__active {
         color: $pumpkin;
@@ -37,3 +32,14 @@ $light-blue: #6096ba;
 
 
 
+@media (min-width: 1224px) {
+    .list {
+
+        &__selection:hover {
+            box-shadow: .2em .2em .4em $gray;
+            border-radius: 2em;
+            color: $dark-blue;
+        }
+        
+    }
+}
