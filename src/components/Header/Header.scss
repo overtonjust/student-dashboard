@@ -50,9 +50,9 @@ $light-blue: #6096ba;
     &__dropdown-menu {
         position: absolute;
         right: 0%;
-        width: 10rem;
+        width: 9rem;
         top: calc(100% + 1rem);
-        border-radius: .2rem;
+        border-radius: .4rem;
         background-color: $white;
         box-shadow: .2em .2em .4em $gray;
     }
@@ -62,4 +62,15 @@ $light-blue: #6096ba;
         color: $pumpkin;
     }
   
+}
+
+
+@media (max-width: 1224px) {
+    .header {
+
+
+        &__text{
+            font-size: 1.5rem;
+        }
+    }
 }

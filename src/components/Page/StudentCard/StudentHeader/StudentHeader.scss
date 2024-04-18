@@ -13,9 +13,9 @@ $gray-blue: #6096ba;
     
     &__img {
         grid-column: 1;
-        max-height: 110px;
+        max-height: 100px;
         max-width: 100px;
-        border-radius: 5px;
+        border-radius: 50%;
         object-fit: cover;
         
     }
@@ -76,11 +76,12 @@ $gray-blue: #6096ba;
 
 @media (max-width: 1224px) {
     .card-head{
-       
+       column-gap: 8%;
 
         &__img{
-            width: 3.5rem;
-            height: 3.5rem;
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
             object-fit: cover;
         }
 

@@ -14,7 +14,7 @@ $light-blue: #6096ba;
     color: $dark-blue;
     
     &__selection {
-        border-bottom: 2px solid $light-blue;
+        border-bottom: .15em solid $light-blue;
         font-size: .9rem;
         font-weight: 600;
         padding: 4%;
@@ -22,9 +22,18 @@ $light-blue: #6096ba;
         color: $soft-blue;
         cursor: pointer;
     }
+
+    &__selection:hover {
+        box-shadow: .2em .2em .4em $gray;
+        border-radius: 2em;
+        color: $dark-blue;
+    }
     
     &__active {
         color: $pumpkin;
     }
     
 }
+
+
+

@@ -32,10 +32,11 @@ $gray-blue: #6096ba;
 
 @media (max-width: 1224px) {
     .page {
-        row-gap: 2rem;
+        row-gap: 1rem;
+        
 
         &__head{
-            margin-top: 2rem;
+        
         }
     }
 }
