@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import CohortPanel from './components/CohortPanel/CohortPanel';
 import Page from './components/Page/Page';
 import ListData from './components/ListData/ListData';
+import Aside from './components/Aside/Aside';
 import data from './data/data.json';
 import './App.scss'
 
@@ -43,20 +44,15 @@ function App() {
   return (
     <>
     {isDesktopOrLaptop ?
-      <div className="container">
-        <Header />
-        <div className="container__body">
-          <CohortPanel  children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>
-          <Page data={filteredList} selectedCohort={currCohort} />
-        </div>
+    <div className="container">
+      <Aside />
+      <div className="container__body">
+
       </div>
-    : 
-      <div className="container">
-        <Header children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>
-        <div className="container__body-mobile">
-          <Page data={filteredList} selectedCohort={currCohort} />  
-        </div>
-      </div>
+    </div>
+    : <div className="container">
+
+    </div>
     }
    
     </>
@@ -64,3 +60,17 @@ function App() {
 }
 
 export default App
+      // v1.0 code 
+      // <div className="container">
+      //   <Header />
+      //   <div className="container__body">
+      //     <CohortPanel  children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>
+      //     <Page data={filteredList} selectedCohort={currCohort} />
+      //   </div>
+      // </div>
+      // <div className="container">
+      //   <Header children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>
+      //   <div className="container__body-mobile">
+      //     <Page data={filteredList} selectedCohort={currCohort} />  
+      //   </div>
+      // </div>

@@ -6,7 +6,7 @@ $soft-blue: #349ce1;
 $light-blue: #6096ba;
 
 .panel-box {
-    grid-area: panel;
+    grid-row: 2;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
