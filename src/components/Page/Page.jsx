@@ -12,7 +12,9 @@ function Page(props) {
         <>
             <div className="page">
                 <PageHead total={total} activeCohort={selectedCohort} />
-                <StudentCard studentInfo={data} />
+                <div className="page__holder">
+                    <StudentCard studentInfo={data} />
+                </div>
             </div>
         </>
     )

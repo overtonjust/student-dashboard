@@ -45,14 +45,17 @@ function App() {
     <>
     {isDesktopOrLaptop ?
     <div className="container">
-      <Aside />
+      <Aside children={<CohortPanel  children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>} />
       <div className="container__body">
-
+        <Page data={filteredList} selectedCohort={currCohort} />
       </div>
     </div>
     : <div className="container">
-
+    <Aside children={<CohortPanel  children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>} />
+    <div className="container__body">
+      <Page data={filteredList} selectedCohort={currCohort} />
     </div>
+  </div>
     }
    
     </>

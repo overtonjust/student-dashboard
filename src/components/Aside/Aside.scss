@@ -11,21 +11,24 @@ $light-blue: #a3cef1ff;
 .aside {
     grid-column: 1;
     width: 100%;
+    max-width: 250px;
     height: 100%;
     background-color: $dark-blue;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10% 90%;
-
+    grid-template-rows: 8% 92%;
+    
     &__header {
         grid-row: 1;
         display: flex;
         justify-content: center;
         align-items: center;
+       
+        // border-bottom: .2em solid $light-blue;
     }
 
     &__text {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         color: $white;
     }
 }

@@ -6,13 +6,12 @@ $soft-blue: #349ce1;
 $gray-blue: #6096ba;
 
 .page-header {
-   
-
 
     &__title {
         font-size: 1.3rem;
         font-weight: 600;
         color: $pumpkin;
+        line-height: 2rem;
     }
 
     &__count {

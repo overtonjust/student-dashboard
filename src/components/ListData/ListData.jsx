@@ -9,7 +9,6 @@ function ListData (props) {
 
     return (
         <>
-            <ul className='list'>{desktopActive ? 'Choose a Cohort by Start Date': ''}</ul>
                 <li onClick={() => clickAction(false)} className={!activeState ? 'list__selection list__active' : 'list__selection' }>All Students</li>
                 {cohorts.map((cohort,index) => {     
                     const cohortForData = cohort.split(' ').join('')
