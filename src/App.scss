@@ -36,8 +36,8 @@ html, body {
     background-color: $white;
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 20% 80%;
-  
+    grid-template-columns: 200px auto;
+    column-gap: 1em;
 
     &__body {
         grid-column: 2;

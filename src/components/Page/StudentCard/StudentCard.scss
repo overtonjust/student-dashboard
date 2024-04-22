@@ -12,10 +12,11 @@ $gray-blue: #6096ba;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        border: 2px solid $gray-blue;
+        box-shadow: .2em 0 .4em .2em $gray;
         border-radius: 2em;
         padding: 3%;
         row-gap: 2rem;
+        transition: .2s ease-in;
 
 
     &__header {
@@ -23,16 +24,20 @@ $gray-blue: #6096ba;
         grid-column: span 2;
     }
    
-    &__stats{
-        grid-column: span 2;
-        grid-row: 2;
-    }
+    // &__stats{
+    //     grid-column: span 2;
+    //     grid-row: 2;
+    // }
 
-    &__form {
-        grid-row: 3;
-        grid-column: span 2;
-    }
+    // &__form {
+    //     grid-row: 3;
+    //     grid-column: span 2;
+    // }
     
+}
+
+.student:hover {
+    transform: translateY(-.5em);
 }
 
 

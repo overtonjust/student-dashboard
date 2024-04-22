@@ -11,7 +11,6 @@ $light-blue: #a3cef1ff;
 .aside {
     grid-column: 1;
     width: 100%;
-    max-width: 250px;
     height: 100%;
     background-color: $dark-blue;
     display: grid;
@@ -28,7 +27,7 @@ $light-blue: #a3cef1ff;
     }
 
     &__text {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         color: $white;
     }
 }

@@ -16,8 +16,8 @@ $gray-blue: #6096ba;
     max-width: 100vw;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10% 90%;
-    padding: 2%;
+    grid-template-rows: 5% 95%;
+    padding: .2em;
     row-gap: 1em;
     overflow-y: scroll;
     scrollbar-color: $gray-blue $grayScroll;
@@ -36,7 +36,7 @@ $gray-blue: #6096ba;
         grid-template-columns: repeat(auto-fit, 22em);
         grid-template-rows: auto;
         row-gap: 2em;
-        column-gap: .5em;
+        column-gap: .1em;
     }
 
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import StudentHeader from './StudentHeader/StudentHeader';
-import StudentScores from './StudentScores/StudentScores';
+import StudentScorecard from './StudentScorecard/StudentScorecard';
 import StudentForm from './StudentForm/StudentForm';
 import './StudentCard.scss'
 
@@ -32,15 +32,21 @@ function StudentCard(props) {
                              />
                                 {showStatus === index && (    
                                     <>
-                                        <StudentScores
+                                        <StudentScorecard
+                                        src={student.profilePhoto} 
+                                        name={student} 
+                                        verified={verified} 
+                                        username={student.username} 
+                                        dob={student.dob} 
+                                        setState={setShowStatus}
                                         codewarsCurrent={codewarsCurrent}
                                         codewarsGoal={codewarsGoal}
                                         scores={scores}
                                         certs={certs}
                                          />
-                                        <StudentForm
+                                        {/* <StudentForm
                                         notes={student.notes}
-                                        />     
+                                        />      */}
                                     </>                             
                                 ) }
                         </article>

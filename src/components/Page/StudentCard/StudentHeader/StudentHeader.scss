@@ -39,12 +39,6 @@ $gray-blue: #6096ba;
         line-height: 130%;
         color: $dark-blue;
     }
-    
-    &__verified {
-        color: $pumpkin;
-        font-size: .9rem;
-        
-    }
 
     &__email {
         font-size: .9rem;
@@ -70,9 +64,25 @@ $gray-blue: #6096ba;
         border-radius: 1em;
         padding: 4%;
         color: $white;
+        box-shadow: .3em .4em .3em $dark-blue;
         font-size: 1.1rem;
+        transition: .2s ease;
         cursor: pointer;
     }
+
+    &__more:active {
+        transform: translateY(.2em);
+        box-shadow: .2em .2em .3em $dark-blue;
+        color: $pumpkin;
+        text-shadow: .2em .2em .2em $dark-blue;
+    }
+
+    // &__more:hover{
+    //     transform: translateY(-.2em);
+    //     box-shadow: .3em .6em .3em $dark-blue;
+    //     color: $pumpkin;
+    //     text-shadow: .2em .2em .2em $dark-blue;
+    // }
 }
 
 // @media (max-width: 1224px) {
