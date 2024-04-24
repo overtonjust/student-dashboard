@@ -1,0 +1,93 @@
+$pumpkin: #ff6700;
+$dark-blue: #274c77;
+$gray: #8b8c89;
+$white: #e7ecef;
+$soft-blue: #349ce1;
+$gray-blue: #6096ba;
+
+
+
+.navbar {
+    grid-row: 1;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 .01em .4em $gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+   
+
+    &__form{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 1em;
+    }
+
+    &__searchbox {
+        grid-column: 2;
+        width: 20em;
+        height: 2em;
+        box-shadow: 0 0 .4em $gray;
+        border-radius: 2em;
+        display: grid;
+        grid-template-columns: 90% 10%;
+        background-color: $white;
+        padding-right: .4em;
+    }
+
+    &__input{
+        grid-column: 1;
+        border: none;
+        outline: none;
+        height: 100%;
+        width: 100%;
+        border-radius: 2em;
+        padding: 0 .8em;
+        font-size: 1.1em;
+        color: $dark-blue;
+        background-color: $white;
+    }
+
+    &__input::placeholder {
+        text-align: left;
+        color: $dark-blue;
+        
+    }
+
+    &__button {
+        grid-column: 2;
+        align-self: center;
+        border: none;
+        outline: none;
+        background-color: $white;
+        padding: .2em;
+        border-radius: 2em;
+        cursor: pointer;
+    }
+
+    &__search{
+        font-size: 1.2em;
+    }
+
+
+    &__profile{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1em;
+
+    }
+
+    &__welcome{
+        grid-column: 1;
+        font-size: 1rem;
+        font-weight: 600;
+        align-self: center;
+    }
+
+    &__icon{
+        grid-column: 2;
+        font-size: 3rem;
+        color: $gray-blue;
+    }
+}

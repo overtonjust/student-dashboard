@@ -16,29 +16,16 @@ $gray-blue: #6096ba;
         border-radius: 2em;
         padding: 3%;
         row-gap: 2rem;
-        transition: .2s ease-in;
+        transition: 0.01s ease-in;
 
+}
 
-    &__header {
-        grid-row: 1;
-        grid-column: span 2;
-    }
-   
-    // &__stats{
-    //     grid-column: span 2;
-    //     grid-row: 2;
-    // }
-
-    // &__form {
-    //     grid-row: 3;
-    //     grid-column: span 2;
-    // }
+.hover:hover {
+    transform: translateY(-.5em);
     
 }
 
-.student:hover {
-    transform: translateY(-.5em);
-}
+
 
 
 @media (max-width: 1224px) {

@@ -1,10 +1,10 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
-import Header from './components/Header/Header';
-import CohortPanel from './components/CohortPanel/CohortPanel';
 import Page from './components/Page/Page';
-import ListData from './components/ListData/ListData';
+import Navbar from './components/Navbar/Navbar';
+import CohortPanel from './components/Aside/CohortPanel/CohortPanel';
+import ListData from './components/Aside/CohortPanel/ListData/ListData';
 import Aside from './components/Aside/Aside';
 import data from './data/data.json';
 import './App.scss'
@@ -39,7 +39,14 @@ function App() {
   }
 
   const [currCohort, setCurrCohort] = useState(false);
+  const [searchedStudent, setSearchedStudent] = useState(false);
   const filteredList = currCohort ? data.filter(student =>  student.cohort.cohortCode === currCohort) : data;
+  const searchedList = filteredList.filter(student => {
+    const {preferredName, surname} = student.names;
+
+    return preferredName.includes(searchedStudent) || surname.includes(searchedStudent); 
+
+  })
 
   return (
     <>
@@ -47,12 +54,14 @@ function App() {
     <div className="container">
       <Aside children={<CohortPanel  children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>} />
       <div className="container__body">
+        <Navbar currData={filteredList} updatedData ={searchedList} search={searchedStudent} setSearch={setSearchedStudent} />
         <Page data={filteredList} selectedCohort={currCohort} />
       </div>
     </div>
     : <div className="container">
     <Aside children={<CohortPanel  children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>} />
     <div className="container__body">
+      <Navbar />
       <Page data={filteredList} selectedCohort={currCohort} />
     </div>
   </div>
@@ -63,17 +72,4 @@ function App() {
 }
 
 export default App
-      // v1.0 code 
-      // <div className="container">
-      //   <Header />
-      //   <div className="container__body">
-      //     <CohortPanel  children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>
-      //     <Page data={filteredList} selectedCohort={currCohort} />
-      //   </div>
-      // </div>
-      // <div className="container">
-      //   <Header children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>
-      //   <div className="container__body-mobile">
-      //     <Page data={filteredList} selectedCohort={currCohort} />  
-      //   </div>
-      // </div>
+  

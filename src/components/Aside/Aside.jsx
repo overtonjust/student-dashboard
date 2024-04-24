@@ -1,5 +1,5 @@
 import './Aside.scss';
-import CohortPanel from '../CohortPanel/CohortPanel';
+
 
 
 

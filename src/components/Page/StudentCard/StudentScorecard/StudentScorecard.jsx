@@ -5,7 +5,7 @@ import './StudentScorecard.scss';
 
 
 function StudentScorecard(props) {
-    const { codewarsCurrent, codewarsGoal, scores, certs, src , name, verified, username, dob, index, state, setState} = props;
+    const { codewarsCurrent, codewarsGoal, scores, certs, src , name, verified, username, dob, setState} = props;
 
     function formatName(obj) {
         const firstName = obj.names.preferredName;
@@ -37,6 +37,7 @@ function StudentScorecard(props) {
     }
 
     return (
+        
         <div className="stats-backdrop">
             <div className='student__stats stats'>
                 <div className="stats__close">
@@ -60,7 +61,7 @@ function StudentScorecard(props) {
                     <p className='stats__content'><span className='stats__label'>Current Total:</span> <span className='stats__value'>{codewarsCurrent.total}</span></p>
                     <p className='stats__content'><span className='stats__label'>Last Week:</span> <span className='stats__value'>{codewarsCurrent.lastWeek}</span></p>
                     <p className='stats__content'><span className='stats__label'>Goal:</span> <span className='stats__value'>{codewarsGoal.total}</span></p>                                          
-                    <p className='stats__content'><span className='stats__label'>Percent of Goal Achieved:</span> <span className='stats__value'>{convertToPercentStr(codewarsCurrent.total, codewarsGoal.total)}</span></p>                                          
+                    <p className='stats__content'><span className='stats__label'>Percent Achieved:</span> <span className='stats__value'>{convertToPercentStr(codewarsCurrent.total, codewarsGoal.total)}</span></p>                                          
                 </div>
                 <div className='stats__scores'>
                     <div className="stats__title-block">

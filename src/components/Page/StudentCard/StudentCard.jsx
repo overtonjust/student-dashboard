@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import StudentHeader from './StudentHeader/StudentHeader';
 import StudentScorecard from './StudentScorecard/StudentScorecard';
-import StudentForm from './StudentForm/StudentForm';
 import './StudentCard.scss'
 
 function StudentCard(props) {
@@ -19,7 +18,7 @@ function StudentCard(props) {
                 const verified = certs.resume && certs.linkedin && certs.mockInterview && certs.github && codewarsCurrent.total > 600;
 
                 return (
-                        <article key={student.id} className='page__student student'>
+                        <article key={student.id} className={showStatus!== -1 ? 'page__student student ': 'page__student student hover'}>
                             <StudentHeader
                             src={student.profilePhoto} 
                             name={student} 
@@ -30,24 +29,19 @@ function StudentCard(props) {
                             state={showStatus}
                             setState={setShowStatus}
                              />
-                                {showStatus === index && (    
-                                    <>
-                                        <StudentScorecard
-                                        src={student.profilePhoto} 
-                                        name={student} 
-                                        verified={verified} 
-                                        username={student.username} 
-                                        dob={student.dob} 
-                                        setState={setShowStatus}
-                                        codewarsCurrent={codewarsCurrent}
-                                        codewarsGoal={codewarsGoal}
-                                        scores={scores}
-                                        certs={certs}
-                                         />
-                                        {/* <StudentForm
-                                        notes={student.notes}
-                                        />      */}
-                                    </>                             
+                            {showStatus === index && (                                      
+                            <StudentScorecard
+                            src={student.profilePhoto} 
+                            name={student} 
+                            verified={verified} 
+                            username={student.username} 
+                            dob={student.dob} 
+                            setState={setShowStatus}
+                            codewarsCurrent={codewarsCurrent}
+                            codewarsGoal={codewarsGoal}
+                            scores={scores}
+                            certs={certs}
+                                />                                                              
                                 ) }
                         </article>
                         

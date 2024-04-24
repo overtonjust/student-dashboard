@@ -1,16 +1,9 @@
-
-// $sky-blue: rgba(66, 202, 253, 1);
-// $pumpkin: #ff6700ff;
-// $white: #ebebebff;
-// $silver: #c0c0c0ff;
-// $bice-blue: #3a6ea5ff;
-// $polynesian-blue: #004e98ff;
-
-$dark-blue: #274c77ff;
-$soft-blue: #6096baff;
-$gray: #8b8c89ff;
-$white: #e7ecefff;
-$light-blue: #a3cef1ff;
+$pumpkin: #ff6700;
+$dark-blue: #274c77;
+$gray: #8b8c89;
+$white: #e7ecef;
+$soft-blue: #349ce1;
+$gray-blue: #6096ba;
 
 * {
     margin: 0;
@@ -24,10 +17,11 @@ $light-blue: #a3cef1ff;
 }
 
 html, body {
-   height: 100vh;
-   width: 100vw;
-   display: flex;
-   flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .container {
@@ -36,21 +30,25 @@ html, body {
     background-color: $white;
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 200px auto;
-    column-gap: 1em;
+    grid-template-columns: 200px calc(100% - 200px);
+
+
 
     &__body {
         grid-column: 2;
         height: 100%;
         width: 100%;
         display: grid;
-        grid-template-rows: 8% 90%;
+        grid-template-rows: 6% 92%;
         grid-template-columns: 1fr;
         background-color: $white;
-
+        row-gap: 2%;
+        overflow-x: hidden;
     }
 
 }
+
+
 
 
 // &__body-mobile {

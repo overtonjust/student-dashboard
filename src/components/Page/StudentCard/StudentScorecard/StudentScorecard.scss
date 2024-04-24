@@ -9,7 +9,7 @@ $gray-blue: #6096ba;
 
 
 .stats-backdrop {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -20,6 +20,7 @@ $gray-blue: #6096ba;
     grid-template-columns: 1fr;
     align-items: center;
     place-items: center;
+    
 }
 
 
@@ -73,6 +74,7 @@ $gray-blue: #6096ba;
         row-gap: .1em;
         box-shadow: .2em 0 .4em $gray;
         border-radius: 2em;
+        
     }
 
     &__title-block {
