@@ -21,8 +21,7 @@ function StudentCard(props) {
                         <article key={student.id} className={showStatus!== -1 ? 'page__student student ': 'page__student student hover'}>
                             <StudentHeader
                             src={student.profilePhoto} 
-                            name={student} 
-                            verified={verified} 
+                            name={student}  
                             username={student.username} 
                             dob={student.dob} 
                             index={index}

@@ -24,6 +24,7 @@ $gray-blue: #6096ba;
         column-gap: 1em;
     }
 
+
     &__searchbox {
         grid-column: 2;
         width: 20em;
@@ -35,7 +36,7 @@ $gray-blue: #6096ba;
         background-color: $white;
         padding-right: .4em;
     }
-
+    
     &__input{
         grid-column: 1;
         border: none;
@@ -91,3 +92,4 @@ $gray-blue: #6096ba;
         color: $gray-blue;
     }
 }
+

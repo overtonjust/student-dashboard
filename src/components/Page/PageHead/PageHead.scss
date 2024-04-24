@@ -6,7 +6,9 @@ $soft-blue: #349ce1;
 $gray-blue: #6096ba;
 
 .page-header {
-    
+    display: flex;
+    justify-content: space-between;
+
     &__title {
         font-size: 1.2rem;
         font-weight: 600;

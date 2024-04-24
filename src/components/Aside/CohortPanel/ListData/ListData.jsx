@@ -5,7 +5,7 @@ import './ListData.scss'
 
 
 function ListData (props) {
-    const { desktopActive, cohorts, clickAction, activeState} = props;
+    const {cohorts, clickAction, activeState} = props;
 
     return (
         <>

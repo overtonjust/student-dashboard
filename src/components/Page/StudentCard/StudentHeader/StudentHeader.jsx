@@ -3,7 +3,7 @@ import './StudentHeader.scss'
 
 
 function StudentHeader(props) {
-    const {src , name, verified, username, dob, index, state, setState} = props;
+    const {src , name, username, dob, index, state, setState} = props;
     
 
     function formatName(obj) {
@@ -31,7 +31,6 @@ function StudentHeader(props) {
                     <p className='card-head__name'>{formatName(name)}</p>
                 </div>
                 <div className="card-head__info">
-                        {/* <p className='card-head__verified'>{verified ? 'On track to graduate' : ''}</p> */}
                     <p className='card-head__email'>{username}</p>
                     <p className='card-head__birthday'>Birthday: {formateDate(dob)}</p>
                     <button onClick={() => state === index ? setState(-1) : setState(index)} className='card-head__more'>{state === index ? 'Show Less... ' : 'More Details'}</button>

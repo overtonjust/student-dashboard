@@ -13,6 +13,11 @@ function App() {
   const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)'})
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
+  const [currCohort, setCurrCohort] = useState(false);
+  const [search, setSearch] = useState('');
+  const [select, setSelect] = useState('');
+  const [sort, setSort] = useState(false);
+
   const uniqueCohorts = [...new Set(data.map(student => student.cohort.cohortCode))] // remove duplicate seasons and place into an array
   const cohortList = uniqueCohorts.map(cohort => { // create an arr of objs for each season and year
      const cohortArr = cohort.split(/(\d+)/);
@@ -32,19 +37,57 @@ function App() {
           return b.year - a.year
       }
   }).map(obj => `${obj.season} ${obj.year}`) // convert the sorted arr of objs back into a formatted array of strings
-  const changeCohort = (clickedCohort) => {
-  
+  const changeCohort = (clickedCohort) => { 
     
     setCurrCohort(clickedCohort)
   }
+  
+  const verifiedStudents = data.filter(student => {
+    const codewarsCurrent = student.codewars.current;
+    const certs = student.certifications;
+    const verified = certs.resume && certs.linkedin && certs.mockInterview && certs.github && codewarsCurrent.total > 600;
 
-  const [currCohort, setCurrCohort] = useState(false);
-  const [searchedStudent, setSearchedStudent] = useState(false);
+    return verified;
+  })
+
   const filteredList = currCohort ? data.filter(student =>  student.cohort.cohortCode === currCohort) : data;
-  const searchedList = filteredList.filter(student => {
-    const {preferredName, surname} = student.names;
 
-    return preferredName.includes(searchedStudent) || surname.includes(searchedStudent); 
+  const selectedFilter = filteredList.filter(student => {
+    if(!select) {
+      return student;
+    }
+   else if(select.includes(student)) {
+      return student
+    }
+  });
+ 
+
+  const searchedList = selectedFilter.filter(student => {
+    const {preferredName, surname} = student.names;
+    const consistentFirst = preferredName.toLowerCase();
+    const consistentLast = surname.toLowerCase();
+
+    return consistentFirst.includes(search.toLowerCase()) || consistentLast.includes(search.toLowerCase()) ; 
+
+  }).sort((student1,student2) => {
+    const firstName = student1.names.preferredName.toLowerCase().charAt(0);
+    const lastName = student2.names.preferredName.toLowerCase().charAt(0);
+    const firstPoints = student1.codewars.current.total;
+    const secondPoints = student2.codewars.current.total;
+
+      switch(sort) {
+        case 'ascending':
+          return firstName.localeCompare(lastName);
+          
+        case 'descending':
+          return lastName.localeCompare(firstName);
+        
+        case 'ascendingPoints':
+          return firstPoints - secondPoints;
+        
+        case 'descendingPoints' :
+          return secondPoints - firstPoints;
+        }
 
   })
 
@@ -54,15 +97,16 @@ function App() {
     <div className="container">
       <Aside children={<CohortPanel  children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>} />
       <div className="container__body">
-        <Navbar currData={filteredList} updatedData ={searchedList} search={searchedStudent} setSearch={setSearchedStudent} />
-        <Page data={filteredList} selectedCohort={currCohort} />
+        <Navbar verifiedList={verifiedStudents} input={search} setInput={setSearch} select={select} setSelect={setSelect} />
+        <Page data={searchedList} selectedCohort={currCohort} dropdownOption={setSort} />
       </div>
     </div>
     : <div className="container">
+      I'm mobile
     <Aside children={<CohortPanel  children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>} />
     <div className="container__body">
-      <Navbar />
-      <Page data={filteredList} selectedCohort={currCohort} />
+      <Navbar value={search} setValue={setSearch} />
+      <Page data={searchedList} selectedCohort={currCohort} dropdownOption={setSort}/>
     </div>
   </div>
     }
