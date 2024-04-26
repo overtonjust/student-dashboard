@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import StudentHeader from './StudentHeader/StudentHeader';
 import StudentScorecard from './StudentScorecard/StudentScorecard';
+import StudentForm from './StudentScorecard/StudentForm/StudentForm';
 import './StudentCard.scss'
 
 function StudentCard(props) {
@@ -30,6 +31,8 @@ function StudentCard(props) {
                              />
                             {showStatus === index && (                                      
                             <StudentScorecard
+                            
+                            children={<StudentForm notes={student.notes} />}
                             src={student.profilePhoto} 
                             name={student} 
                             verified={verified} 

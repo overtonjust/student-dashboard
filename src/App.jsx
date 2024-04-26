@@ -37,6 +37,7 @@ function App() {
           return b.year - a.year
       }
   }).map(obj => `${obj.season} ${obj.year}`) // convert the sorted arr of objs back into a formatted array of strings
+  
   const changeCohort = (clickedCohort) => { 
     
     setCurrCohort(clickedCohort)

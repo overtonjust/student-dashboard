@@ -1,0 +1,144 @@
+$pumpkin: #ff6700;
+$dark-blue: #274c77;
+$gray: #8b8c89;
+$white: #e7ecef;
+$soft-blue: #349ce1;
+$gray-blue: #6096ba;
+
+
+
+
+.student-form {
+    grid-row: 3;
+    grid-column: span 3;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 10% 10% 25% 55%;
+    row-gap: .6em;
+
+    &__title {
+        grid-column: 1;
+        grid-row: 1;
+        font-weight: 600;
+        color: $dark-blue;
+        margin-top: 1%;
+    }
+
+    &__total{
+        grid-column: 1;
+        grid-row: 2;
+        margin-bottom: 8%;
+        color: $gray;
+    }
+
+    &__total-num{
+        color: $soft-blue;
+        font-weight: 600;
+    }
+
+    &__box {
+        grid-column: 2 / 4;
+        grid-row: span 3;
+        width: 80%;
+        height: 100%;
+        border: 2px solid $gray-blue;
+        border-radius: .4em;     
+        display: grid;
+        grid-template-columns: 40% 40% 40%;
+        grid-template-rows: 1fr 1fr;
+        padding: .8em;
+        align-items: center;
+    }
+
+    &__name {
+        grid-column: span 2;
+        width: 100%;
+    }
+
+    &__comment{
+        grid-column: span 2;
+        grid-row: 2;
+        width: 100%;
+    }
+
+    &__label {
+        color: $gray;
+        font-size: 1.1rem;
+    }
+
+    &__input {
+        width: 14em;
+        background-color: $white;
+        border: .2em solid $gray-blue;
+        color: $dark-blue;
+        outline: none;
+        font-size: 1em;
+    }
+
+    &__submit-holder{
+        grid-column: 3;
+        grid-row: span 2;
+    }
+
+    &__button {
+        padding: .6em;
+        border-radius: 2em;
+        font-weight: 600;
+        color: #fff;
+        background-color: $gray-blue;
+        outline: none;
+        border: .2em solid $gray;
+        cursor: pointer;
+        transition: .02s ease-in;
+        box-shadow: .2em .5em .3em $dark-blue;
+    }
+
+    &__button:active {
+        transform: translateY(.2em);
+        box-shadow: 0em .2em .3em $dark-blue;
+    }
+
+    &__author {
+        font-size: 1.1rem;
+        color: $pumpkin;
+    }
+
+    &__quote {
+        font-size: 1rem;
+        color: $soft-blue;
+    }
+
+    &__list{
+        grid-column: span 4;
+        grid-row: 4;
+        height: 100%;
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow-y: auto;
+        list-style-type: none;
+        scrollbar-color: $gray-blue $white;
+    }   
+
+    &__list-item{
+         margin: .5% 0 .5% -2%;
+    }
+
+    &__list-item::before {
+        content: ' \25B6';
+        color: $gray-blue;
+        margin-right: 2%;
+    }
+}
+
+@media (max-width: 1224px) {
+    .oneOnOne {
+
+        &__input {
+            width: 5rem;
+        }
+    }
+}

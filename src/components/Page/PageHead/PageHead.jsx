@@ -20,7 +20,40 @@ function PageHead(props) {
         <header className='page__head page-header'>
             <p className='page-header__title'>{activeCohort ? activeCohort.split(/(\d+)/).join(' ') : 'All Students'}
             <span className='page-header__highlight'> ({total})</span></p>
-            <Select options={options} placeholder='Sort by' onChange={handleDropdown}  />
+            <Select options={options} placeholder='Sort by' onChange={handleDropdown}   styles={{
+                    control: (baseStyles, state) => ({
+                        ...baseStyles,
+                        borderRadius: '2em',
+                        width: '10em',
+                        height: '2em',
+                        backgroundColor: '#e7ecef',
+                        boxShadow: '0 0 .4em #8b8c89',
+                        border: 'none',             
+                    }),
+                    placeholder: (base) => ({
+                        ...base,
+                        color: '#274c77',
+                    }),
+                    menu: (base) => ({
+                        ...base,
+                        backgroundColor: '#e7ecef',
+                        color: '#274c77',
+                        boxShadow: '0 0 .4em #8b8c89',
+                    }),
+                    option: (base) => ({
+                        ...base,
+                        cursor: 'pointer',
+                    }),
+                    dropdownIndicator: (base) => ({
+                        ...base,
+                        color: '#274c77',
+                        cursor: 'pointer', 
+                    }),
+                    singleValue: (base) => ({
+                        ...base,
+                        color: '#274c77',
+                    })
+                }}  />
         </header>
     )
 }

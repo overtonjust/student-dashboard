@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faXmark, faCheck, faPenToSquare, faChartSimple  } from '@fortawesome/free-solid-svg-icons';
 import './StudentScorecard.scss';
 
 
 function StudentScorecard(props) {
-    const { codewarsCurrent, codewarsGoal, scores, certs, src , name, verified, username, dob, setState} = props;
+    const { codewarsCurrent, codewarsGoal, scores, certs, src , name, verified, username, dob, setState, children} = props;
+
+    const [notes,setNotes] = useState(false)
 
     function formatName(obj) {
         const firstName = obj.names.preferredName;
@@ -53,33 +55,44 @@ function StudentScorecard(props) {
                         <p className='stats-header__email'>{username}</p>
                         <p className='stats-header__birthday'>Birthday: {formateDate(dob)}</p>
                     </div>
+                     <div className="stats-header__icon">
+                        <FontAwesomeIcon className={notes ? 'stats-header__notes' : 'stats-header__scores'} icon={notes ? faChartSimple : faPenToSquare} onClick={ () => setNotes(!notes)}/>                    
+                    </div>              
                 </div>
-                <div className='stats__codewars'>
-                    <div className="stats__title-block">
-                        <p className='stats__head'>Codewars:</p>
+                {notes ? 
+                <>
+                    {children}
+                </> 
+                : 
+                <>
+                    <div className='stats__codewars'>
+                        <div className="stats__title-block">
+                            <p className='stats__head'>Codewars:</p>
+                        </div>
+                        <p className='stats__content'><span className='stats__label'>Current Total:</span> <span className='stats__value'>{codewarsCurrent.total}</span></p>
+                        <p className='stats__content'><span className='stats__label'>Last Week:</span> <span className='stats__value'>{codewarsCurrent.lastWeek}</span></p>
+                        <p className='stats__content'><span className='stats__label'>Goal:</span> <span className='stats__value'>{codewarsGoal.total}</span></p>                                          
+                        <p className='stats__content'><span className='stats__label'>Percent Achieved:</span> <span className='stats__value'>{convertToPercentStr(codewarsCurrent.total, codewarsGoal.total)}</span></p>                                          
                     </div>
-                    <p className='stats__content'><span className='stats__label'>Current Total:</span> <span className='stats__value'>{codewarsCurrent.total}</span></p>
-                    <p className='stats__content'><span className='stats__label'>Last Week:</span> <span className='stats__value'>{codewarsCurrent.lastWeek}</span></p>
-                    <p className='stats__content'><span className='stats__label'>Goal:</span> <span className='stats__value'>{codewarsGoal.total}</span></p>                                          
-                    <p className='stats__content'><span className='stats__label'>Percent Achieved:</span> <span className='stats__value'>{convertToPercentStr(codewarsCurrent.total, codewarsGoal.total)}</span></p>                                          
-                </div>
-                <div className='stats__scores'>
-                    <div className="stats__title-block">
-                         <p className='stats__head'>Scores:</p>   
+                    <div className='stats__scores'>
+                        <div className="stats__title-block">
+                            <p className='stats__head'>Scores:</p>   
+                        </div>
+                        <p className='stats__content'><span className='stats__label'>Assignments:</span> <span className='stats__value'>{convertToPercentStr(scores.assignments)}</span></p>
+                        <p className='stats__content'><span className='stats__label'>Projects:</span> <span className='stats__value'>{convertToPercentStr(scores.projects)}</span></p>
+                        <p className='stats__content'><span className='stats__label'>Assessments:</span> <span className='stats__value'>{convertToPercentStr(scores.assessments)}</span></p>   
                     </div>
-                    <p className='stats__content'><span className='stats__label'>Assignments:</span> <span className='stats__value'>{convertToPercentStr(scores.assignments)}</span></p>
-                    <p className='stats__content'><span className='stats__label'>Projects:</span> <span className='stats__value'>{convertToPercentStr(scores.projects)}</span></p>
-                    <p className='stats__content'><span className='stats__label'>Assessments:</span> <span className='stats__value'>{convertToPercentStr(scores.assessments)}</span></p>   
-                </div>
-                <div className='stats__certifications'>
-                    <div className="stats__title-block">
-                        <p className='stats__head'>Prep Status:</p>
+                    <div className='stats__certifications'>
+                        <div className="stats__title-block">
+                            <p className='stats__head'>Prep Status:</p>
+                        </div>
+                        <p className='stats__content'><span className='stats__label'>Resume: <FontAwesomeIcon className={certs.resume ? 'stats__icon stats__check' : 'stats__icon stats__x'} icon={certs.resume ? faCheck : faXmark} /></span></p>
+                        <p className='stats__content'><span className='stats__label'>LinkedIn: <FontAwesomeIcon className={certs.linkedin ? 'stats__icon stats__check' : 'stats__icon stats__x'} icon={certs.linkedin ? faCheck : faXmark} /></span></p>
+                        <p className='stats__content'><span className='stats__label'>Mock Interview: <FontAwesomeIcon className={certs.mockInterview ? 'stats__icon stats__check' : 'stats__icon stats__x'} icon={certs.mockInterview ? faCheck : faXmark} /></span></p>   
+                        <p className='stats__content'><span className='stats__label'>GitHub: <FontAwesomeIcon className={certs.github ? 'stats__icon stats__check' : 'stats__icon stats__x'} icon={certs.github ? faCheck : faXmark} /></span></p>   
                     </div>
-                    <p className='stats__content'><span className='stats__label'>Resume: <FontAwesomeIcon className={certs.resume ? 'stats__icon stats__check' : 'stats__icon stats__x'} icon={certs.resume ? faCheck : faXmark} /></span></p>
-                    <p className='stats__content'><span className='stats__label'>LinkedIn: <FontAwesomeIcon className={certs.linkedin ? 'stats__icon stats__check' : 'stats__icon stats__x'} icon={certs.linkedin ? faCheck : faXmark} /></span></p>
-                    <p className='stats__content'><span className='stats__label'>Mock Interview: <FontAwesomeIcon className={certs.mockInterview ? 'stats__icon stats__check' : 'stats__icon stats__x'} icon={certs.mockInterview ? faCheck : faXmark} /></span></p>   
-                    <p className='stats__content'><span className='stats__label'>GitHub: <FontAwesomeIcon className={certs.github ? 'stats__icon stats__check' : 'stats__icon stats__x'} icon={certs.github ? faCheck : faXmark} /></span></p>   
-                </div>
+                </>
+                }              
             </div>
         </div>
     )

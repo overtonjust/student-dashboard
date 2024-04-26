@@ -19,9 +19,12 @@ $gray-blue: #6096ba;
    
 
     &__form{
+        height: 100%;
         display: grid;
         grid-template-columns: 1fr 2fr;
         column-gap: 1em;
+        align-items: center;
+        place-items: center;
     }
 
 
@@ -69,6 +72,7 @@ $gray-blue: #6096ba;
 
     &__search{
         font-size: 1.2em;
+        color: $dark-blue;
     }
 
 
@@ -84,12 +88,13 @@ $gray-blue: #6096ba;
         font-size: 1rem;
         font-weight: 600;
         align-self: center;
+        color: $dark-blue;
     }
 
     &__icon{
         grid-column: 2;
         font-size: 3rem;
-        color: $gray-blue;
+        color: $soft-blue;
     }
 }
 
