@@ -4,20 +4,19 @@ import Select from 'react-select';
 import './Navbar.scss'
 
 function Navbar(props) {
-    const { verifiedList, input, setInput, setSelect} = props;
+    const { verifiedList, input, setInput, updateSelect} = props;
     
     const options = [
         { value: false, label: 'Clear' },
-        { value: verifiedList, label: 'Job Ready' },
-        
+        { value: 'verified', label: 'Job Ready' },
+        { value: 'notes', label: 'Starred Remarks'}
       ]
       
     const handleSearch = (event) => {
         setInput(event.target.value)      
     }
-
-    const handleSelect = (selectedOption) => {
-        setSelect(selectedOption.value)
+    const  handleSelect = (selectedOption) => {
+        updateSelect(selectedOption.value)
     }; 
 
     return (

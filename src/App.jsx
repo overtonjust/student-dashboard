@@ -15,7 +15,7 @@ function App() {
 
   const [currCohort, setCurrCohort] = useState(false);
   const [search, setSearch] = useState('');
-  const [select, setSelect] = useState('');
+  const [select, setSelect] = useState(false);
   const [sort, setSort] = useState(false);
 
   const uniqueCohorts = [...new Set(data.map(student => student.cohort.cohortCode))] // remove duplicate seasons and place into an array
@@ -43,13 +43,26 @@ function App() {
     setCurrCohort(clickedCohort)
   }
   
-  const verifiedStudents = data.filter(student => {
+  const updateSelect = (value) => {
+
+   setSelect(data.filter(student => {
     const codewarsCurrent = student.codewars.current;
     const certs = student.certifications;
     const verified = certs.resume && certs.linkedin && certs.mockInterview && certs.github && codewarsCurrent.total > 600;
+    const notes = student.notes.length;
 
-    return verified;
-  })
+    switch(value) {
+      case false:
+        return student;
+
+      case 'verified':
+        return verified;
+      
+      case 'notes':
+        return notes >= 1;
+    }
+    
+  }))}
 
   const filteredList = currCohort ? data.filter(student =>  student.cohort.cohortCode === currCohort) : data;
 
@@ -98,7 +111,7 @@ function App() {
     <div className="container">
       <Aside children={<CohortPanel  children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>} />
       <div className="container__body">
-        <Navbar verifiedList={verifiedStudents} input={search} setInput={setSearch} select={select} setSelect={setSelect} />
+        <Navbar  input={search} setInput={setSearch} select={select} updateSelect={updateSelect} />
         <Page data={searchedList} selectedCohort={currCohort} dropdownOption={setSort} />
       </div>
     </div>

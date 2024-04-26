@@ -145,12 +145,6 @@ $gray-blue: #6096ba;
         align-self: center;
     }
 
-    &__head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
     &__verified {
         color: $pumpkin;
         font-size: .9rem;
@@ -177,11 +171,14 @@ $gray-blue: #6096ba;
     }
 
     &__icon{
-        width: 100%;
+        width: 95%;
         grid-column: 3;
         align-self: left;
         place-self: center;
         padding-left: .8em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     &__notes, &__scores{

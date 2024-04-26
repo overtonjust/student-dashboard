@@ -48,15 +48,13 @@ function StudentScorecard(props) {
                 <div className="stats-header ">
                     <img className='stats-header__img' src={src} alt={formatName(name)} />
                     <div className="stats-header__info">
-                        <div className="stats-header__head">
-                            <p className='stats-header__name'>{formatName(name)}</p>
-                            <p className='stats-header__verified'>{verified ? 'On track to graduate' : ''}</p>
-                        </div>
+                        <p className='stats-header__name'>{formatName(name)}</p>        
                         <p className='stats-header__email'>{username}</p>
                         <p className='stats-header__birthday'>Birthday: {formateDate(dob)}</p>
                     </div>
                      <div className="stats-header__icon">
                         <FontAwesomeIcon className={notes ? 'stats-header__notes' : 'stats-header__scores'} icon={notes ? faChartSimple : faPenToSquare} onClick={ () => setNotes(!notes)}/>                    
+                        <p className='stats-header__verified'>{verified ? 'On track to graduate' : ''}</p>
                     </div>              
                 </div>
                 {notes ? 
