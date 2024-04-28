@@ -107,7 +107,7 @@ function App() {
 
   return (
     <>
-    {isDesktopOrLaptop ?
+    
     <div className="container">
       <Aside children={<CohortPanel  children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>} />
       <div className="container__body">
@@ -115,16 +115,15 @@ function App() {
         <Page data={searchedList} selectedCohort={currCohort} dropdownOption={setSort} />
       </div>
     </div>
-    : <div className="container">
+    {/* : <div className="container">
       I'm mobile
     <Aside children={<CohortPanel  children={<ListData desktopActive={isDesktopOrLaptop} cohorts={cohortList} clickAction={changeCohort} activeState={currCohort}/>}/>} />
     <div className="container__body">
       <Navbar value={search} setValue={setSearch} />
       <Page data={searchedList} selectedCohort={currCohort} dropdownOption={setSort}/>
     </div>
-  </div>
-    }
-   
+  </div> */}
+  
     </>
   )
 }
