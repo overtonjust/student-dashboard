@@ -20,7 +20,7 @@
 
 
 
-## [Version 1](https://v1--joverton-studentdashboard.netlify.app/)
+## [First Version (branch: V1)](https://v1--joverton-studentdashboard.netlify.app/)
 
 ### Features:
 
