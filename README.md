@@ -2,7 +2,7 @@
 
 ## [Live Version](https://joverton-studentdashboard.netlify.app/)
 
-Features:
+### Features:
 
 1. Interactive dashboard with multiple modules to adjust student data.
 
@@ -22,7 +22,7 @@ Features:
 
 ## [Version 1](https://v1--joverton-studentdashboard.netlify.app/)
 
-Features:
+### Features:
 
  1. Clickable panel to change cohort seasons.
 
